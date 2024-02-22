@@ -1,13 +1,4 @@
 spring:
-  jpa:
-    hibernate:
-      ddl-auto: update
-    open-in-view: false
-    properties:
-      hibernate:
-        show_sql: true
-        format_sql: true
-
   docker:
     compose:
       lifecycle-management: START_AND_STOP
