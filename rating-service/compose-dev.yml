@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres
+    container_name: travago-rating-postgres
+    environment:
+      - 'POSTGRES_DB=travago'
+      - 'POSTGRES_PASSWORD=Pranav@123'
+      - 'POSTGRES_USER=root'
+    ports:
+      - '5432'
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: travago-rating-pgadmin
+    ports:
+      - '5050:80'  # Access pgAdmin at http://localhost:5050
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=pranavbisariya29@gmail.com
+      - PGADMIN_DEFAULT_PASSWORD=Pranav@123
+    depends_on:
+      - postgres
