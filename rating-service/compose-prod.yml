@@ -1,0 +1,10 @@
+services:
+  postgres:
+    image: postgres
+    container_name: travago-rating-postgres
+    environment:
+      - 'POSTGRES_DB=travago'
+      - 'POSTGRES_PASSWORD=Pranav@123'
+      - 'POSTGRES_USER=root'
+    ports:
+      - '5432'
