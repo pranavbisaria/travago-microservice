@@ -1,0 +1,12 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+
+  docker:
+    compose:
+      lifecycle-management: START_ONLY
+      profiles:
+        active: dev
+      file: hotel-service/compose-prod.yml

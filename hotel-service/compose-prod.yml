@@ -1,0 +1,10 @@
+services:
+  mongo:
+    image: mongo
+    container_name: travago-hotel-mongo
+    environment:
+      - 'MONGO_INITDB_DATABASE=travago'
+      - 'MONGO_INITDB_ROOT_PASSWORD=Pranav@123'
+      - 'MONGO_INITDB_ROOT_USERNAME=root'
+    ports:
+      - '27017'
