@@ -19,7 +19,7 @@
     </properties>
 
     <modules>
-<!--        <module>rating-service</module>-->
+        <module>rating-service</module>
         <module>user-service</module>
         <module>hotel-service</module>
     </modules>
