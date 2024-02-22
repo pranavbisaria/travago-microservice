@@ -1,0 +1,6 @@
+server:
+  port: 8091
+
+spring:
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
