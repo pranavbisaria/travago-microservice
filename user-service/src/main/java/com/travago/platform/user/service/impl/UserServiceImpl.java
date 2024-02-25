@@ -1,6 +1,7 @@
 package com.travago.platform.user.service.impl;
 
 import com.travago.platform.user.entity.User;
+import com.travago.platform.user.exception.ResourceNotFoundException;
 import com.travago.platform.user.repository.UserRepository;
 import com.travago.platform.user.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -39,7 +40,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User getUser(String id) {
         return this.userRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("User not found with id " + id));
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + id));
     }
 
     @Override
