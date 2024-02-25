@@ -1,6 +1,8 @@
-server:
-  port: 8093
-
 spring:
+  application:
+    name: travago-hotel-service
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
+
+server:
+  port: 8092

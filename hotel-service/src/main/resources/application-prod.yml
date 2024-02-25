@@ -1,7 +1,0 @@
-spring:
-  docker:
-    compose:
-      lifecycle-management: START_ONLY
-      profiles:
-        active: dev
-      file: hotel-service/compose-prod.yml

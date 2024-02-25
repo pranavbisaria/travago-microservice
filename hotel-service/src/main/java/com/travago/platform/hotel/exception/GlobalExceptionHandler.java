@@ -1,6 +1,6 @@
 package com.travago.platform.hotel.exception;
 
-import com.travago.platform.user.model.Response;
+import com.travago.platform.hotel.model.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
