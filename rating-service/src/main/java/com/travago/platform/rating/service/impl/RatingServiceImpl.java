@@ -15,6 +15,7 @@ public class RatingServiceImpl implements RatingService {
 
     @Override
     public HotelRating create(HotelRating hotelRating) {
+        hotelRating.setId(java.util.UUID.randomUUID().toString());
         return this.hotelRatingRepository.save(hotelRating);
     }
 
