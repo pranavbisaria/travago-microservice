@@ -1,9 +1,9 @@
 spring:
   application:
-    name: travago-rating
+    name: travago-rating-service
 
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
 server:
-  port: 8092
+  port: 8093
