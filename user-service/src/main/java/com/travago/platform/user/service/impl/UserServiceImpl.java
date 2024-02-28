@@ -1,6 +1,7 @@
 package com.travago.platform.user.service.impl;
 
 import com.travago.platform.user.entity.User;
+import com.travago.platform.user.entity.UserRating;
 import com.travago.platform.user.exception.ResourceNotFoundException;
 import com.travago.platform.user.repository.UserRepository;
 import com.travago.platform.user.service.UserService;
@@ -8,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -41,8 +43,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String id) {
-        return this.userRepository.findById(id)
+        User user = this.userRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with id " + id));
+
+        ArrayList<UserRating> arrayList = restTemplate.getForObject("http://localhost:8093/api/v1/ratings/users/"+ user.getId(), ArrayList.class);
+        user.setRatings(arrayList);
+        return user;
     }
 
     @Override
