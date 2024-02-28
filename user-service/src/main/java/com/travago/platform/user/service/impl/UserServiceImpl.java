@@ -6,6 +6,7 @@ import com.travago.platform.user.repository.UserRepository;
 import com.travago.platform.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.UUID;
@@ -14,6 +15,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
+    private final RestTemplate restTemplate;
 
     @Override
     public User saveUser(User user) {
